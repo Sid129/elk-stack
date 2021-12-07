@@ -131,11 +131,16 @@ filter: ""
 ## ref: https://www.elastic.co/guide/en/logstash/current/output-plugins.html
 ##
 output: |-
-  # elasticsearch {
-  #   hosts => ["${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]
-  #   manage_template => false
-  #   index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
-  # }
+   
+  elasticsearch {
+    #hosts => ["${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]
+    hosts => ["http://elasticsearch-data.chetan.svc.cluster.local:9200"]
+    
+     
+     manage_template => false
+     index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+   }
+  
   # gelf {
   #   host => "${GRAYLOG_HOST}"
   #   port => ${GRAYLOG_PORT}
