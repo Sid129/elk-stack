@@ -326,7 +326,7 @@ lifecycle: {}
 service:
   ## @param service.type Kubernetes service type (`ClusterIP`, `NodePort`, or `LoadBalancer`)
   ##
-  type: ClusterIP
+  type: NodePort
   ## @param service.ports.http [object] Logstash svc ports
   ##
   ports:
