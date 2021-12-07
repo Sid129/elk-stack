@@ -136,7 +136,7 @@ output: |+
     #hosts => ["${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}"]
     hosts => ["http://elasticsearch-data.chetan.svc.cluster.local:9200"]
      manage_template => false
-     index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+     index => "test_input"
    }
   # gelf {
   #   host => "${GRAYLOG_HOST}"
