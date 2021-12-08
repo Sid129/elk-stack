@@ -114,6 +114,12 @@ input: |-
   #   port => 1514
   #   type => syslog
   # }
+  
+  filter {
+      json {
+        source => "message"
+      }
+    }
   http { port => 8080 }
 ## @param filter Filter Plugins configuration
 ## ref: https://www.elastic.co/guide/en/logstash/current/filter-plugins.html
