@@ -114,12 +114,6 @@ input: |-
   #   port => 1514
   #   type => syslog
   # }
-  
-  filter {
-      json {
-        source => "message"
-      }
-    }
   http { port => 8080 }
 ## @param filter Filter Plugins configuration
 ## ref: https://www.elastic.co/guide/en/logstash/current/filter-plugins.html
@@ -132,7 +126,11 @@ input: |-
 ##     match => [ "timestamp" , "dd/MMM/yyyy:HH:mm:ss Z" ]
 ##   }
 ##
-filter: ""
+filter: 
+  json {
+         source => "message"
+       }
+    
 ## @param output [string] Output Plugins configuration
 ## ref: https://www.elastic.co/guide/en/logstash/current/output-plugins.html
 ##
