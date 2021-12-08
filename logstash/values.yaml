@@ -146,7 +146,7 @@ output: |+
   #   host => "${GRAYLOG_HOST}"
   #   port => ${GRAYLOG_PORT}
   # }
-  stdout {codec => "json"}
+  stdout {}
   ## @param existingConfiguration Name of existing ConfigMap object with the Logstash configuration (`input`, `filter`, and `output` will be ignored).
    ##
  
